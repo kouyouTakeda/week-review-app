@@ -1,0 +1,136 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(100, 100, 100, $alpha: .7);
+}
+
+.edit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  height: 90vh;
+  padding: 10px 5%;
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 15px #777;
+  transform: translate(-50%, -50%);
+
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    font-size: large;
+    color: black;
+    background-color: #d3d3d3;
+    border: none;
+    border-radius: 10px;
+  }
+
+  textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 50vh;
+    padding: 15px;
+    color: black;
+    background-color: #d3d3d3;
+    border: none;
+    border-radius: 10px;
+  }
+
+  h3 {
+    margin-block: 0;
+  }
+
+  .tag-group {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .tag-input {
+      position: relative;
+      margin-bottom: 10px;
+
+      input {
+        box-sizing: border-box;
+        padding: 7px;
+        font-size: large;
+        color: black;
+        vertical-align: bottom;
+        background-color: #d3d3d3;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+        
+        &:focus {
+          border-radius: 10px 10px 0 0;
+
+          &:placeholder-shown {
+            margin-bottom: 2px;
+            border-radius: 10px;
+            outline: 2px solid blue;
+          }
+        }
+      }
+
+      .tag-predict {
+        position: absolute;
+        display: none;
+        width: 100%;
+        height: calc(24px * 5);
+        padding-bottom: 10px;
+        overflow: scroll;
+        background-color: #d3d3d3;
+        border-radius: 0 0 10px 10px;
+
+        ul {
+          padding-inline: 0;
+          margin-block: 0;
+        }
+
+        li {
+          box-sizing: border-box;
+          padding-inline-start: 1rem;
+          list-style: none;
+          
+          &:hover {
+            background-color: #e3e3e3;
+          }
+        }
+      }
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      overflow-y: scroll;
+
+      .tag {
+        padding: 5px 10px;
+        margin-left: 5px;
+        color: white;
+        background-color: #7cb6fb;
+        border-radius: 15px;
+
+        &:hover {
+          color: #7CB6FB;
+          background-color: white;
+          border: 1px solid #7CB6FB;
+        }
+      }
+    }
+
+    
+  }
+
+  p {
+    // user agent stylesheet
+    margin-block: 0;
+  }
+}
