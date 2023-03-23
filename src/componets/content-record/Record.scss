@@ -1,0 +1,106 @@
+.record {
+  display: flex;
+  flex-grow: 1;
+
+  .record-left {
+    width: 20%;
+    text-align: center;
+    background-color: #6892fe69;
+
+    // background-color: #396AE8;
+
+    .record-title {
+      margin-right: 10px;
+      margin-left: 10px;
+      background-color: #396AE8;
+      border-radius: 10px;
+      opacity: 1;
+
+      &:hover {
+        opacity: 0.7;
+        transition: all;
+        transition-duration: 0.3s;
+      }
+    }
+
+  }
+
+  .record-right {
+    width: 80%;
+
+    .record-menu {
+      display: flex;
+      justify-content: end;
+      margin: 20px 10px;
+
+      button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        color: white;
+        background-color: #396AE8;
+        border: none;
+        border-radius: 7px;
+      }
+
+      &:hover {
+        opacity: 0.7;
+        transition: all;
+        transition-duration: 0.3s;
+      }
+    }
+
+    .record-episode {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      margin: 10px;
+      border-top: 1px solid darkgrey;
+      border-bottom: 1px solid darkgrey;
+
+
+      .episode-number {
+        width: 40px;
+        padding: 10px;
+        margin-block: 0;
+        margin-right: 5%;
+        white-space: nowrap;
+        background-color: darkgrey;
+        border-radius: 10px;
+        opacity: 0.7;
+      }
+
+      .record-episode-text {
+        flex-grow: 1;
+        align-self: baseline;
+        height: 56px;
+        overflow: hidden;
+        text-overflow: clip;
+        white-space: normal;
+
+        p {
+          margin-block: 0;
+        }
+      }
+
+      .record-episode-bottons {
+        white-space: nowrap;
+
+        button {
+          padding: 10px 20px;
+          margin: 0 10px;
+          color: white;
+          background-color: #396AE8;
+          border: none;
+          border-radius: 7px;
+        }
+
+        &:hover {
+          opacity: 0.7;
+          transition: all;
+          transition-duration: 0.3s;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.library-card {
+  display: flex;
+  align-items: start;
+
+  // width: calc(100vw / 3);
+  padding: 10px;
+  background-color: #396AE8;
+  border-radius: 10px;
+  box-shadow: 8px 8px 15px -5px #777;
+
+  .library-card-img {
+    margin-right: 10px;
+
+    img {
+      width: 100px;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+      vertical-align: bottom;
+    }
+  }
+
+  .library-card-text {
+    p {
+      // user agent stylesheet
+      margin-block: 0;
+    }
+  }
+}

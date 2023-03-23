@@ -11,3 +11,20 @@
   -moz-osx-font-smoothing: grayscale;
   text-size-adjust: 100%;
 }
+
+body {
+  max-width: 100%;
+  height: auto;
+  min-height: 100vh;
+
+  // user agent stylesheet 無効
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  height: auto;
+  min-height: 100vh;
+}
