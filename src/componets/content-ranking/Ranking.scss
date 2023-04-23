@@ -1,0 +1,49 @@
+.ranking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .ranking-data {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    text-align: center;
+
+    select {
+      padding: 10px 20px;
+      margin-right: 10px;
+      font-size: 1.5rem;
+      color: white;
+      background: linear-gradient(#393939, #181818);
+      border: none;
+      border-radius: 10px;
+    }
+
+    input {
+      width: 15%;
+      padding: 10px;
+      font-size: 1.5rem;
+      color: white;
+      text-align: center;
+      background: linear-gradient(#393939, #181818);
+      border: none;
+      border-radius: 10px 0 0 10px;
+    }
+
+    .story-number {
+      padding: 10px 20px;
+      font-size: 1.5rem;
+      color: white;
+      background: linear-gradient(#393939, #181818);
+      border-radius: 0 10px 10px 0;
+    }
+  }
+
+  .ranking-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}

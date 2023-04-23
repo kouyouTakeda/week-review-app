@@ -1,11 +1,41 @@
 import type React from 'react';
 import './Edit.scss';
+import { useState } from 'react';
 
-const Edit: React.FC = () => {
+// 後でインポートにする
+type review = {
+  storyNumber: number;
+  data: string;
+};
+
+type Props = {
+  setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
+  review: review;
+};
+
+type formData = {
+  title: string;
+  data: string;
+  tags: string[];
+};
+
+const Edit: React.FC<Props> = ({ setIsEdit, review }) => {
+  const [formData, setFormData] = useState<formData>({
+    title: '',
+    data: review.data,
+    tags: [],
+  });
+
   return (
-    <div className="overlay">
+    <div
+      className="overlay"
+      aria-hidden="true"
+      onClick={(e) => {
+        e.target === e.currentTarget && setIsEdit(false);
+      }}
+    >
       <div className="edit">
-        <form action="">
+        <form>
           <label htmlFor="title">
             <p>title</p>
           </label>
@@ -14,7 +44,14 @@ const Edit: React.FC = () => {
           <label htmlFor="review">
             <p>感想</p>
           </label>
-          <textarea id="review" placeholder="感想"></textarea>
+          <textarea
+            id="review"
+            placeholder="感想"
+            value={formData.data}
+            onChange={(e) => {
+              setFormData({ ...formData, data: e.target.value });
+            }}
+          ></textarea>
         </form>
 
         <div className="tag-group">
