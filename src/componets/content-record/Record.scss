@@ -9,6 +9,16 @@
 
     // background-color: #396AE8;
 
+    button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      margin-top: 10px;
+      color: white;
+      background-color: #396AE8;
+      border: none;
+      border-radius: 7px;
+    }
+
     .record-title {
       margin-right: 10px;
       margin-left: 10px;
@@ -93,12 +103,12 @@
           background-color: #396AE8;
           border: none;
           border-radius: 7px;
-        }
 
-        &:hover {
-          opacity: 0.7;
-          transition: all;
-          transition-duration: 0.3s;
+          &:hover {
+            opacity: 0.7;
+            transition: all;
+            transition-duration: 0.3s;
+          }
         }
       }
     }
