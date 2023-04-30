@@ -7,6 +7,9 @@ import {
   deleteDoc,
   doc,
 } from 'firebase/firestore';
+import { AiOutlineEdit } from 'react-icons/ai';
+import { FiDelete } from 'react-icons/fi';
+import { IoIosAddCircleOutline } from 'react-icons/io';
 import { db } from '../../firebase';
 import './Record.scss';
 import useRealtimeCollection from '../../hooks/useRealtimeCollection';
@@ -87,7 +90,8 @@ const Record: React.FC = () => {
             setIsEdit('animeList');
           }}
         >
-          anime Add
+          <span>anime add</span>
+          <IoIosAddCircleOutline />
         </button>
         {animeList.map((anime) => {
           return (
@@ -107,7 +111,10 @@ const Record: React.FC = () => {
 
       <div className="record-right">
         <div className="record-menu">
-          <button onClick={addReview}>Add</button>
+          <button onClick={addReview}>
+            <span>Add</span>
+            <IoIosAddCircleOutline />
+          </button>
         </div>
         {reviews.length ? (
           reviews
@@ -125,7 +132,8 @@ const Record: React.FC = () => {
                       setIsEdit('review');
                     }}
                   >
-                    edit
+                    <span>edit</span>
+                    <AiOutlineEdit />
                   </button>
                   <button
                     onClick={() => {
@@ -135,7 +143,8 @@ const Record: React.FC = () => {
                       });
                     }}
                   >
-                    view
+                    <span>delete</span>
+                    <FiDelete />
                   </button>
                 </div>
               </div>
