@@ -20,10 +20,11 @@ type Review = {
   id: string;
   storyNumber: number;
   title: string;
+  score: number;
 };
 
 const Ranking: React.FC = () => {
-  const auth = useAuthContext();
+  const user = useAuthContext();
   const [formData, setFormData] = useState<{
     schedule: string;
     storyNumber: number;
@@ -35,7 +36,7 @@ const Ranking: React.FC = () => {
     const getRankingData = async () => {
       // AnimeListコレクションのクエリ検索
       const q = query(
-        collection(db, `Users/${auth?.uid ?? 'null'}/AnimeList`),
+        collection(db, `Users/${user?.uid ?? 'null'}/AnimeList`),
         where('schedule', '==', formData.schedule)
       );
       // 取得したデータのさらにサブコレクションのクエリ検索
@@ -69,6 +70,11 @@ const Ranking: React.FC = () => {
             setFormData({ ...formData, schedule: e.target.value });
           }}
         >
+          {scheduleList.length ? (
+            <option hidden>クールを選択してください</option>
+          ) : (
+            <option hidden>データがありません</option>
+          )}
           {scheduleList.map((schedule) => {
             return (
               <option value={schedule} key={schedule}>
@@ -91,9 +97,17 @@ const Ranking: React.FC = () => {
         <span className="story-number">話</span>
       </div>
       <div className="ranking-list">
-        {rankingData.map((ranking) => {
-          return <RankingBox key={ranking.id} />;
-        })}
+        {rankingData
+          .sort((a, b) => b.score - a.score)
+          .map((ranking) => {
+            return (
+              <RankingBox
+                key={ranking.id}
+                title={ranking.title}
+                score={ranking.score}
+              />
+            );
+          })}
       </div>
     </div>
   );

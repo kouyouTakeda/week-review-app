@@ -10,6 +10,7 @@ type formData = {
   storyNumber: number;
   data: string;
   date: Timestamp;
+  score: number;
 };
 type Props = {
   animeId: string;
@@ -26,6 +27,7 @@ const EditReview: React.FC<Props> = ({
     storyNumber: 0,
     data: '',
     date: Timestamp.now(),
+    score: 0,
     id: 'null',
   },
   setIsEdit,
@@ -65,6 +67,24 @@ const EditReview: React.FC<Props> = ({
               required
             />
             <span>話</span>
+          </label>
+
+          <label htmlFor="score">
+            <input
+              type="number"
+              id="score"
+              value={formData.score}
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  score: Number(e.target.value),
+                });
+              }}
+              min={1}
+              max={10}
+              required
+            />
+            <span>点</span>
           </label>
 
           <label htmlFor="title">

@@ -24,7 +24,7 @@
     transform: skewX(-20deg);
   }
 
-  .rank {
+  .rank10 {
     position: relative;
     padding: 0 20px;
     margin-right: 20px;
@@ -40,6 +40,69 @@
       z-index: -1;
       content: '';
       background: linear-gradient(to right, #ff00fc, pink);
+      border-radius: 5px;
+      transform: skewX(-20deg);
+    }
+  }
+
+  .rank9 {
+    position: relative;
+    padding: 0 20px;
+    margin-right: 20px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      content: '';
+      background: linear-gradient(to right, #4f70b0, #8fcbf2);
+      border-radius: 5px;
+      transform: skewX(-20deg);
+    }
+  }
+
+  .rank8 {
+    position: relative;
+    padding: 0 20px;
+    margin-right: 20px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      content: '';
+      background: linear-gradient(to right, #37c156, #37e75a);
+      border-radius: 5px;
+      transform: skewX(-20deg);
+    }
+  }
+
+  .rank {
+    position: relative;
+    padding: 0 20px;
+    margin-right: 20px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      content: '';
+      background: linear-gradient(to right, #505750, #585854);
       border-radius: 5px;
       transform: skewX(-20deg);
     }

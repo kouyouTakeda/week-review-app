@@ -11,6 +11,12 @@ import { auth } from '../../firebase';
 
 // 型の第二候補 User | null | undefined
 // User:ログイン済み null:未ログイン undefined:apiの結果前
+
+// type authContextType = {
+//   user: User | null;
+//   setUser: (user) => {};
+// };
+
 const AuthContext = createContext<User | null>(null);
 
 export const useAuthContext = (): User | null => {

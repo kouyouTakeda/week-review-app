@@ -28,6 +28,7 @@ type review = {
   title: string;
   data: string;
   date: Timestamp;
+  score: number;
 };
 type id = {
   id: string;
@@ -94,9 +95,11 @@ const Record: React.FC = () => {
           <IoIosAddCircleOutline />
         </button>
         {animeList.map((anime) => {
+          const select = anime.id === selectedAnimeId ? 'select' : '';
+
           return (
             <p
-              className="record-title"
+              className={`record-title ${select}`}
               key={anime.id}
               aria-hidden="true"
               onClick={() => {

@@ -1,11 +1,16 @@
 import type React from 'react';
 import './RankingBox.scss';
 
-const RankingBox: React.FC = () => {
+type Props = {
+  title: string;
+  score: number;
+};
+
+const RankingBox: React.FC<Props> = ({ title = '', score = 0 }) => {
   return (
     <div className="ranking-box">
-      <span className="rank">1</span>
-      <h2>タイトル</h2>
+      <span className={score < 8 ? 'rank' : `rank${score}`}>{score}</span>
+      <h2>{title}</h2>
     </div>
   );
 };

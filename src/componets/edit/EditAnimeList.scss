@@ -22,6 +22,11 @@
   box-shadow: 0 0 15px 15px #777;
   transform: translate(-50%, -50%);
 
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
   input {
     box-sizing: border-box;
     width: 100%;
@@ -34,6 +39,7 @@
   }
 
   #submit {
+    align-self: center;
     width: 50%;
     margin-top: 20px;
   }
